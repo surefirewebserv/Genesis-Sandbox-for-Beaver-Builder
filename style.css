@@ -186,6 +186,13 @@ a {
 	text-decoration: underline;
 }
 
+a,
+a:active,
+a:focus,
+a:hover{
+	outline: none;
+}
+
 a:hover,
 a:focus {
 	color: #333;
@@ -730,7 +737,6 @@ th:first-child {
 
 /* ## Genesis
 --------------------------------------------- */
-
 .breadcrumb {
 	background-color: #fff;
 	font-size: 16px;
@@ -1032,8 +1038,11 @@ img.alignright,
 
 .site-header {
 	background-color: #fff;
+	transition: all 0.4s;
 }
-
+.gs-header-sticky{
+	transition: all 0.4s;
+}
 .site-header > .wrap {
 	padding: 20px 0;
 }
@@ -1044,18 +1053,13 @@ img.alignright,
 .title-area {
 	float: left;
 	padding: 10px 0;
-	width: 300px;
+	width: 22%;
 }
 
 .header-image .title-area {
 	margin: 0 auto;
 	max-width: 300px;
 	padding: 0;
-}
-
-.header-full-width .title-area {
-	float: none;
-	width: 100%;
 }
 
 .site-title {
@@ -1100,6 +1104,7 @@ img.alignright,
 
 /* ## Widget Area
 --------------------------------------------- */
+
 
 .site-header .widget-area {
 	float: right;
@@ -1194,6 +1199,9 @@ img.alignright,
 	float: right;
 }
 
+/* ## Secondary 
+--------------------------------------------- */
+
 /* ## Accessible Menu
 --------------------------------------------- */
 
@@ -1218,14 +1226,6 @@ img.alignright,
 
 .site-header .genesis-nav-menu li li {
 	margin-left: 0;
-}
-
-/* ## After Header Navigation
---------------------------------------------- */
-
-.nav-primary {
-	background-color: #fff;
-	border-top: 1px solid #eee;
 }
 
 /* ## Footer Navigation
@@ -1399,7 +1399,6 @@ p.entry-meta {
 	display: none;
 }
 
-
 /* # Sidebars
 ---------------------------------------------------------------------------------------------------- */
 
@@ -1428,20 +1427,24 @@ p.entry-meta {
 
 .footer-widgets-1,
 .footer-widgets-2,
-.footer-widgets-3 {
-	width: 380px;
+.footer-widgets-3,
+.footer-widgets-4{
+	width: 23.5%;
+	margin-left: 2%;
 }
 
 .footer-widgets-1 {
-	margin-right: 70px;
+	margin-left: 0;
 }
 
 .footer-widgets-1,
-.footer-widgets-2 {
+.footer-widgets-2,
+.footer-widgets-3 {
 	float: left;
+
 }
 
-.footer-widgets-3 {
+.footer-widgets-4 {
 	float: right;
 }
 
@@ -1463,6 +1466,187 @@ p.entry-meta {
 	margin-bottom: 0;
 }
 
+/* # Blank Page Template
+---------------------------------------------------------------------------------------------------- */
+.blank-page .gs-sticky-space,
+.blank-page .gs-nav-space{
+	display: none;
+}
+.blank-page .site-inner{
+	width: 100%;
+	max-width: 100%;
+	padding: 0px;
+}
+body.custom-background.blank-page{
+	background-color: #fff !important;
+}
+.blank-page .entry{
+	padding: 0px;
+	margin-bottom: 0px;
+}
+
+/* # Header Sticky
+---------------------------------------------------------------------------------------------------- */
+.gs-header-sticky {
+    box-shadow: 0px 0px 15px 5px #333;
+    z-index: 999;
+    width: 100%;
+    float: left;
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+
+.gs-header-sticky .title-area{
+	padding: 15px 0px 0px;
+	width: 15%;
+}
+
+.gs-header-sticky .site-header {
+	background-color: #fff;
+	position: fixed;
+	width: 100%;
+	height: 120px;
+	top : 0px;
+}
+
+.gs-header-sticky > .wrap{
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+/* # Primary Navigation
+---------------------------------------------------------------------------------------------------- */
+.nav-primary{
+	background-color: #fff;
+}
+
+.nav-primary.top{
+	border-bottom: 1px solid #eee;
+}
+
+.nav-primary.bottom{
+	border-top: 1px solid #eee;
+}
+
+/* # Secondary Navigation
+---------------------------------------------------------------------------------------------------- */
+
+.nav-secondary{
+	background-color: #222222; 
+}
+.nav-secondary .genesis-nav-menu a{
+	color: #fff;
+	font-size: 12px;
+	font-size: 1.2rem;
+	padding: 12px 20px ;
+}
+
+/* # Customize Footer
+---------------------------------------------------------------------------------------------------- */
+.gs-copyright-html,
+.gs-copyright-text{
+	text-transform: capitalize;
+}
+.gs-copyright-html{
+	margin-top: 10px;
+}
+/* # Logo on Left
+---------------------------------------------------------------------------------------------------- */
+.gs-logo-on-left .title-area {
+    float: left;
+}
+.gs-logo-on-left .nav-primary{
+    float: right;
+    text-align: right;
+    width: 72%;
+    clear: none;
+    margin-top : 10px;
+    background: transparent;
+}
+.gs-header-sticky.gs-logo-on-left .nav-primary{
+	margin-top : 0px;
+}
+
+/* # Logo on Right
+---------------------------------------------------------------------------------------------------- */
+.gs-logo-on-right .title-area {
+    float: right;
+}
+
+.gs-logo-on-right .nav-primary{
+    float: left;
+    text-align: left;
+    width: 78%;
+    clear: none;
+    margin-top : 20px;
+    background: transparent;
+}
+
+.gs-header-sticky.gs-logo-on-right .nav-primary{
+	margin-top : 0px;
+}
+
+/* # Logo on center
+---------------------------------------------------------------------------------------------------- */	
+
+.gs-logo-on-middle .nav-secondary .genesis-nav-menu a{
+	color: #333;
+	font-size: 16px;
+	font-size: 1.6rem;
+}	
+
+.gs-header-sticky.gs-logo-on-middle .site-logo{
+	margin: 10px auto 0px;
+}
+
+.gs-logo-on-middle .nav-primary{
+	width: 39%;
+    float: left;
+    clear: none;
+    background: transparent;
+}
+
+.gs-logo-on-middle .genesis-nav-menu a{
+	padding: 20px 15px;
+}
+.gs-header-sticky.gs-logo-on-middle .genesis-nav-menu a{
+	padding: 30px 15px;
+}
+.gs-logo-on-middle .nav-secondary{
+	width: 39%;
+	float: right;
+	text-align: right;
+	clear: none;
+	background: transparent;
+}
+
+.gs-logo-on-middle .site-logo{
+	width: 100%;
+}
+
+.gs-logo-on-middle .title-area{
+	width: 22%;
+    top: 0;
+    position: absolute;
+    left: 39%;
+    margin: auto;
+    text-align: center;
+}
+
+.gs-header-sticky.gs-logo-on-middle .title-area{
+	width: 15%;
+	left: 42.5%;
+	padding: 5px 0px 0px;
+}
+
+.gs-logo-on-middle .wrap{
+	position: relative;
+}
+
+.gs-header-sticky.gs-logo-on-middle .site-logo{
+	margin: 10px 0px 0px;
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
@@ -1495,18 +1679,7 @@ p.entry-meta {
 		width: 300px;
 	}
 
-	.footer-widgets-1,
-	.footer-widgets-2,
-	.footer-widgets-3 {
-		width: 340px;
-	}
-
-	.footer-widgets-1 {
-		margin-right: 60px;
-	}
-
 }
-
 
 @media only screen and (max-width: 1200px) {
 
@@ -1532,25 +1705,95 @@ p.entry-meta {
 		width: 400px;
 	}
 
-	.footer-widgets-1,
-	.footer-widgets-2,
-	.footer-widgets-3 {
-		width: 300px;
+	.gs-header-sticky.gs-logo-on-middle .title-area{
+		width: 200px;
+		left: 39%;
 	}
-
-	.footer-widgets-1 {
-		margin-right: 30px;
-	}
-
 }
 
 @media only screen and (max-width: 1023px) {
 
+	.gs-header-sticky.gs-logo-on-middle .site-logo{
+		margin: auto;
+	}
+
+	.gs-header-sticky.gs-logo-on-middle .title-area{
+		width: 100%;
+	}
+	.responsive-menu-slide.gs-logo-on-middle .title-area{
+		top: 40px;
+	}
+	.responsive-menu-slide.gs-logo-on-middle.gs-header-sticky .title-area{
+		top: 0;
+	}
+	.responsive-menu-normal.gs-logo-on-middle .title-area {
+    	float: left;
+    	position: static;
+	}
+
+	.gs-logo-on-middle .wrap{
+		position: static;
+	}
+
+	.gs-logo-on-middle .menu-toggle{
+		width: 100px;
+		float: right;
+		margin-top: 20px;
+		padding: 20px 10px 13px;
+	}
+
+	.gs-logo-on-right .title-area {
+    	width: 50%;
+	}
+
+	.gs-logo-on-right .menu-toggle{
+		width: 100px;
+		float: left;
+		margin-top: 20px;
+		padding: 20px 10px 13px;
+	}
+
+	.gs-logo-on-left .title-area {
+    	width: 50%;
+	}
+
+	.gs-logo-on-left .menu-toggle{
+		width: 100px;
+		float: right;
+		margin-top: 20px;
+		padding: 20px 10px 13px;
+	}
+
+	.gs-header-sticky .menu-toggle{
+		margin-top: 0;
+	}
+
+	.gs-sticky-space{
+		height: 0px !important;
+	}
+
+	.site-header .site-logo{
+		margin: auto;
+	}
+
+	.responsive-menu-normal.gs-header-sticky .title-area{
+		width: 160px !important;
+		padding: 5px 0px 0px;				
+	}
+	
 	.site-inner,
 	.wrap {
 		max-width: 800px;
 	}
-
+	.title-area{
+		width: 200px !important;
+		margin: auto;
+		float: none;
+	}
+	.responsive-menu-normal .nav-primary{
+		width: 100% !important;
+		padding: 0px 20px;
+	}
 	.content,
 	.content-sidebar-sidebar .content,
 	.content-sidebar-sidebar .content-sidebar-wrap,
@@ -1569,12 +1812,10 @@ p.entry-meta {
 	.title-area {
 		width: 100%;
 	}
-
-	.site-header .wrap {
-		padding-left: 5%;
-		padding-right: 5%;
+	.genesis-nav-menu .sub-menu a{
+		background: transparent !important;
+		background-color: transparent !important;
 	}
-
 	.genesis-nav-menu li,
 	.header-image .title-area,
 	.site-header ul.genesis-nav-menu,
@@ -1582,7 +1823,6 @@ p.entry-meta {
 		float: none;
 	}
 
-	.genesis-nav-menu,
 	.site-description,
 	.site-header .title-area,
 	.site-header .widget-area,
@@ -1611,7 +1851,7 @@ p.entry-meta {
 	.menu-toggle,
 	.sub-menu-toggle {
 		border-width: 0;
-		background-color: #fff;
+		background-color: transparent;
 		color: #333;
 		display: block;
 		margin: 0 auto;
@@ -1619,14 +1859,21 @@ p.entry-meta {
 		text-align: center;
 		visibility: visible;
 	}
-	
+	.sub-menu-toggle:focus,
+	.menu-toggle:hover{
+		background-color: transparent !important;
+		background: transparent !important;
+	}
 	.sub-menu-toggle:hover,
 	.sub-menu-toggle:focus {
 		border-width: 0;
+		background-color: transparent !important;
+		background: transparent !important;
 	}
 
 	.menu-toggle {
 		border-top: 1px solid #eee;
+		border-bottom: 1px solid #eee;
 		line-height: 20px;
 		position: relative;
 		right: 0;
@@ -1636,6 +1883,7 @@ p.entry-meta {
 
 	.site-header .menu-toggle {
 		border: 0;
+		transition: none;
 	}
 
 	.menu-toggle:before,
@@ -1717,8 +1965,7 @@ p.entry-meta {
 	}
 
 	.js nav button:hover,
-	.js .menu-toggle:hover,
-	.js .nav-primary {
+	.js .menu-toggle:hover{
 		background-color: #fff;
 		color: #000;
 	}
@@ -1730,10 +1977,14 @@ p.entry-meta {
 	}
 
 	.footer-widgets-1,
-	.footer-widgets-2 {
-		margin: 0 auto 40px;
+	.footer-widgets-2,
+	.footer-widgets-3,
+	.footer-widgets-4{
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: 30px;
 	}
-
 }
 
 @media only screen and (max-width: 860px) {
@@ -1748,12 +1999,17 @@ p.entry-meta {
 	}
 
 	.site-inner {
-		padding: 5% 5% 0;
+		padding: 40px 20px 0;
+	}
+
+	.site-header > .wrap{
+		padding-right: 20px;
+		padding-left:  20px;
 	}
 
 	.wrap {
-		padding-left: 5%;
-		padding-right: 5%;
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 
 	.after-entry,
@@ -1765,11 +2021,11 @@ p.entry-meta {
 	.entry-pings,
 	.sidebar .widget {
 		padding: 30px;
-		margin-bottom: 5%;
+		margin-bottom: 40px;
 	}
 
 	.sidebar {
-		margin-bottom: 5%;
+		margin-bottom: 40px;
 	}
 
 	.pagination {
@@ -1796,7 +2052,23 @@ p.entry-meta {
 	}
 
 }
-
+@media only screen and (max-width: 768px){
+	.gs-hide-nav .gs-logo-on-middle .nav-secondary,
+	.gs-hide-nav .nav-primary{
+		display: none;
+	}
+	.responsive-menu-slide.gs-logo-on-middle .title-area{
+		position: static;
+	}
+	.responsive-menu-slide .gs-logo-on-left .title-area{
+	    float: none;
+	}
+}
+@media only screen and (max-width: 768px){
+	#wpadminbar {
+	    position: fixed;
+	}
+}
 
 /* # Print Styles
 ---------------------------------------------------------------------------------------------------- */
@@ -1922,7 +2194,6 @@ p.entry-meta {
 		widows: 3;
 	}
 
-
 	img {
 		page-break-after: avoid;
 		page-break-inside: avoid;
@@ -1940,4 +2211,107 @@ p.entry-meta {
 		page-break-before: avoid;
 	}
 
+}
+/* # Responsive Menu
+---------------------------------------------------------------------------------------------------- */
+a.gs-sird-icon{
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    z-index: 999999;
+    background-color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+}
+
+.gs-responsive-menu{
+	display: none;
+}
+.sidr-class-menu-item{
+	position: relative;
+}
+
+body .sidr.gs-responsive-menu{
+	top: 37px;
+	width: 80%;
+}
+
+body.admin-bar a.gs-sird-icon{
+	top: 46px;
+}
+
+body.admin-bar .sidr.gs-responsive-menu{
+	top: 83px;
+}
+
+body .sidr.left.gs-responsive-menu{
+	left: -80%;
+}
+body .sidr.right.gs-responsive-menu{
+	right: -80%;
+}
+.gs-menu-space{
+	display: none;
+	height: 37px;
+	width: 100%;
+	background-color: #fff;
+}
+
+.sidr-class-sub-menu-toggle{
+	border-color: white transparent;
+    border-style: solid;
+    border-width: 10px 10px 0px 10px;
+    height: 0px;
+    width: 0px;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}
+
+.gs-icon-container{
+	padding: 5px 0px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.gs-sird-icon span{
+	font-size: 20px;
+	text-transform: uppercase;
+	display: inline-block;
+	margin-left: 10px;
+	color: #333;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 25px;
+	height: 5px;
+	background-color: #333;
+	margin: 3px 0;
+    transition: 0.4s;
+}
+
+.bar3{
+	margin-bottom: -6px; 
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-7px, 7px) ;
+    transform: rotate(-45deg) translate(-7px, 7px) ;
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-4px, -5px) ;
+    transform: rotate(45deg) translate(-4px, -5px) ;
+}
+@media only screen and (max-width: 768px){
+	.gs-menu-space,
+	a.gs-sird-icon,
+	.gs-responsive-menu{
+		display: block;
+	}
 }
