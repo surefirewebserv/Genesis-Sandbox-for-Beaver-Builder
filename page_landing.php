@@ -1,20 +1,20 @@
 <?php
 /**
- * Genesis Sandbox.
+ * Genesis Starter.
  *
- * This file adds the landing page template to the Genesis Sandbox Theme.
+ * This file adds the landing page template to the Genesis starter Theme.
  *
- * @package Genesis Sandbox
- * @author  Sure Fire Web Services, Inc.
- * @license GPL-2.0+
- * @link    https://surefirewebservices.com/
+ * @package Genesis Starter
+ * @author  
+ * @license 
+ * @link 
  */
 
 //* Template Name: Landing
 
 //* Add landing page body class to the head
-add_filter( 'body_class', 'genesis_sandbox_add_body_class' );
-function genesis_sandbox_add_body_class( $classes ) {
+add_filter( 'body_class', 'genesis_starter_add_body_class' );
+function genesis_starter_add_body_class( $classes ) {
 
 	$classes[] = 'landing-page';
 
@@ -26,8 +26,8 @@ function genesis_sandbox_add_body_class( $classes ) {
 remove_action ( 'genesis_before_header', 'genesis_skip_links', 5 );
 
 //* Dequeue Skip Links Script
-add_action( 'wp_enqueue_scripts', 'genesis_sandbox_dequeue_skip_links' );
-function genesis_sandbox_dequeue_skip_links() {
+add_action( 'wp_enqueue_scripts', 'genesis_starter_dequeue_skip_links' );
+function genesis_starter_dequeue_skip_links() {
 
 	wp_dequeue_script( 'skip-links' );
 

@@ -8,11 +8,11 @@
 
 	'use strict';
 
-	var genesisSandbox              = {},
+	var genesisSample              = {},
 		mainMenuButtonClass = 'menu-toggle',
 		subMenuButtonClass  = 'sub-menu-toggle';
 
-	genesisSandbox.init = function() {
+	genesisSample.init = function() {
 		var toggleButtons = {
 			menu : $( '<button />', {
 				'class' : mainMenuButtonClass,
@@ -20,7 +20,7 @@
 				'aria-pressed' : false,
 				'role' : 'button'
 				} )
-				.append( genesisSandbox.params.mainMenu ),
+				.append( genesisSample.params.mainMenu ),
 			submenu : $( '<button />', {
 				'class' : subMenuButtonClass,
 				'aria-expanded' : false,
@@ -29,7 +29,7 @@
 				} )
 				.append( $( '<span />', {
 					'class' : 'screen-reader-text',
-					text : genesisSandbox.params.subMenu
+					text : genesisSample.params.subMenu
 				} ) )
 		};
 		if ($( '.nav-primary' ).length > 0 ) {
@@ -41,9 +41,9 @@
 		$( '.' + mainMenuButtonClass ).each( _addClassID );
 		$( '.' + mainMenuButtonClass ).addClass('dashicons-before dashicons-menu');
 		$( '.' + subMenuButtonClass ).addClass('dashicons-before dashicons-arrow-down');
-		$( window ).on( 'resize.genesisSandbox', _doResize ).triggerHandler( 'resize.genesisSandbox' );
-		$( '.' + mainMenuButtonClass ).on( 'click.genesisSandbox-mainbutton', _mainmenuToggle );
-		$( '.' + subMenuButtonClass ).on( 'click.genesisSandbox-subbutton', _submenuToggle );
+		$( window ).on( 'resize.genesisSample', _doResize ).triggerHandler( 'resize.genesisSample' );
+		$( '.' + mainMenuButtonClass ).on( 'click.genesisSample-mainbutton', _mainmenuToggle );
+		$( '.' + subMenuButtonClass ).on( 'click.genesisSample-subbutton', _submenuToggle );
 	};
 
 	// add nav class and ID to related button
@@ -187,10 +187,10 @@
 		// run test on resize of the window
 		$( window ).resize( _combineMenus );
 		
-		genesisSandbox.params = typeof genesisSandboxL10n === 'undefined' ? '' : genesisSandboxL10n;
+		genesisSample.params = typeof genesisSampleL10n === 'undefined' ? '' : genesisSampleL10n;
 
-		if ( typeof genesisSandbox.params !== 'undefined' ) {
-			genesisSandbox.init();
+		if ( typeof genesisSample.params !== 'undefined' ) {
+			genesisSample.init();
 		}
 
 	});
