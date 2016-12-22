@@ -20,9 +20,6 @@ require_once( get_stylesheet_directory() . '/inc/customizer.php' );
 //* BB Template
 include "inc/bbtemplate/blank-template.php";
 
-//* Includes widget
-include "inc/widgets/select-bb-template.php";
-
 //* Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Genesis Starter' );
 define( 'CHILD_THEME_VERSION', '1.0.0' );
